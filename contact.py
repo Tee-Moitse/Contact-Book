@@ -1,11 +1,17 @@
+from flask import Flask 
 
 while True: 
-    with open('contact.txt', 'a') as f:
-        name = input("Name: ")
-        phone = input("Phone: ")
-        f.writelines((name, " : ", phone, "\n"))
-    
-    with open('contact.txt', 'r') as f:
-        search = input("Search: ")
-        for i in  f:
-            if search
+    q = input("Add (a) Search (s) Quit (q)")
+    if q == "a":
+        with open('contact.txt', 'a') as f:
+            name = input("Name: ")
+            phone = input("Phone: ")
+            f.writelines((name, " : ", phone, "\n"))
+    elif q == "s":
+        with open('contact.txt', 'r') as f:
+            search = input("Search: ")
+            for i in  f:
+                if search in i:
+                    print(i)
+    else:
+        break
