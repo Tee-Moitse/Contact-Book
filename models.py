@@ -8,4 +8,3 @@ class Contact(db.Model):
     email = db.Column(db.String(120))
     phone = db.Column(db.String(20))
     
-    
